@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=41.6"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bide"
+version = "0.1"
+authors = [
+  { name="Mikhail Velikikh" },
+]
+description = "Binary data extractor"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+]
+dependencies = [
+    "prettytable>=3.10",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+bide = "bide.cli:main"
+
+[project.urls]
+"Homepage" = "https://github.com/mvelikikh/oracle/tree/master/tools/bide"
+"Bug Tracker" = "https://github.com/mvelikikh/oracle"
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-cov",
+    "tox",
+]
+
+[tool.pytest.ini_options]
+addopts = [
+    "--strict-markers",
+    "--strict-config",
+    "-ra"
+]
+testpaths = "tests"
+
+[tool.coverage]
+paths.source = [
+    "src",
+    ".tox*/*/lib/python*/site-packages",
+    ".tox*/pypy*/site-packages",
+    ".tox*\\*\\Lib\\site-packages",
+    "*/src",
+    "*\\src",
+]
+report.fail_under = 100
+report.show_missing = true
+report.skip_covered = true
+run.omit = [
+    "__main__.py",
+]

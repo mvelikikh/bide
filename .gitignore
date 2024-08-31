@@ -1,0 +1,18 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Distribution / packaging
+*.egg-info/
+build/
+dist/
+
+# Environments
+venv/
+
+# Unit test / coverage reports
+.coverage
+.tox/
+tests/test-executable
+
+# Vim swap files
+[._]*.swp
