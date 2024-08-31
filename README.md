@@ -1,10 +1,12 @@
+![Python](https://img.shields.io/badge/Python-3.8%20|%203.9%20|%203.11-blue) ![GitHub actions](https://github.com/mvelikikh/bide/actions/workflows/test.yml/badge.svg)
+
 # BIDE
 
 **bide** stands for binary data extractor. It is a command line utility to extract and parse data from the Oracle binary.
 
 # Prerequisites
 - Linux only
-- Python 3.8 (should work with later versions but I use 3.8 in my tests)
+- Python 3
 - Requires the binutils package since it calls nm, objdump, readelf under the hood
 - Tested with Oracle Database versions: 19c (19.22), 23c (23.3)
 
