@@ -25,8 +25,8 @@ dependencies = [
 bide = "bide.cli:main"
 
 [project.urls]
-"Homepage" = "https://github.com/mvelikikh/oracle/tree/master/tools/bide"
-"Bug Tracker" = "https://github.com/mvelikikh/oracle"
+"Homepage" = "https://github.com/mvelikikh/bide"
+"Bug Tracker" = "https://github.com/mvelikikh/bide/issues"
 
 [project.optional-dependencies]
 test = [
