@@ -29,5 +29,7 @@ test_struct test_array[3] = {{0, "value20", 30, "value40"},
 test_struct_symbols test_array_symbols[3] = {{0, 0, 30, f1},
                                              {1, f2, 31, f3},
                                              {2, f1, 32, f2}};
+
+int large_symbol[25000];
                                                             
 int main() {}

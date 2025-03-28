@@ -26,12 +26,7 @@ def _get_cmd_output(cmd):
 
 def get_addr_len(symbol):
     """Return address and length of the given symbol."""
-    cmd = (
-        "readelf -s --wide %(ora_binary)s"
-        " | grep -w %(symbol)s"
-        " | head -1 "
-        " | awk '{print $2, $3}'"
-    )
+    cmd = "nm -S %(ora_binary)s | grep -w %(symbol)s | awk '{print $1, $2}'"
 
     cmd = cmd % dict(ora_binary=settings.ora_binary, symbol=symbol)
 
@@ -42,7 +37,7 @@ def get_addr_len(symbol):
 
     addr, len_ = output.split()
 
-    return (int(addr, 16), int(len_))
+    return (int(addr, 16), int(len_, 16))
 
 
 def objdump(start_addr, len_):

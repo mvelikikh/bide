@@ -16,3 +16,9 @@ def test_get_symbols(test_executable):
     symbol_map = dict(zip(addr_list, symbols))
     actual_symbols = binutils.get_symbols(addr_list)
     assert sorted(symbol_map) == sorted(actual_symbols)
+
+
+def test_get_large_symbol(test_executable):
+    """Getting 100K byte symbol."""
+    addr, len_ = binutils.get_addr_len("large_symbol")
+    assert len_ == 100000
